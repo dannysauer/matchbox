@@ -25,8 +25,7 @@ fi
 echo "Downloading CoreOS $CHANNEL $VERSION images and sigs to $DEST"
 
 echo "CoreOS Image Signing Key"
-curl -#
-https://coreos.com/security/image-signing-key/CoreOS_Image_Signing_Key.asc -o "$DEST/CoreOS_Image_Signing_Key.asc"
+curl -# https://coreos.com/security/image-signing-key/CoreOS_Image_Signing_Key.asc -o "$DEST/CoreOS_Image_Signing_Key.asc"
 $GPG --import < "$DEST/CoreOS_Image_Signing_Key.asc" || true
 
 # PXE kernel and sig
